@@ -1,0 +1,2 @@
+.cv-highlight{box-shadow:0 0 0 4px rgba(34,139,230,0.12), 0 6px 18px rgba(0,0,0,0.06);border-radius:8px;transition:box-shadow 240ms, background-color 240ms;}
+.cv-highlight td, .cv-highlight div{background-color: rgba(34,139,230,0.03) !important;}

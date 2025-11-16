@@ -1,0 +1,28 @@
+{
+  "name": "barangay-information-system",
+  "version": "1.0.0",
+  "description": "Barangay Information System with React Frontend and Express Backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"cd server && npm run dev\" \"cd client && npm start\"",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install",
+    "build": "cd server && npm run build && cd ../client && npm run build",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start"
+  },
+  "keywords": [
+    "barangay",
+    "information-system",
+    "react",
+    "express",
+    "typescript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "mongodb": "^7.0.0"
+  }
+}

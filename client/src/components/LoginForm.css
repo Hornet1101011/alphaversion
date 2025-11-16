@@ -1,0 +1,214 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #40a9ff 0%, #9254de 50%, #ff85c0 100%);
+  padding: 28px;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 1400px; /* increased container width */
+}
+
+/* Three-pane layout wrapper */
+.two-pane { width: 100%; }
+.two-pane-row { min-height: 80vh; display: flex; }
+.pane { display: flex; align-items: center; justify-content: center; }
+.pane-inner { width: 100%; display: flex; align-items: center; justify-content: center; }
+.left-pane { padding: 12px; }
+.center-pane .pane-inner { padding: 12px; }
+.right-pane .pane-inner { padding: 12px; }
+
+/* Partition widths for medium+ screens: 50% / 50% */
+@media (min-width: 768px) {
+  .left-pane { flex: 0 0 50%; max-width: 50%; }
+  .center-pane { flex: 0 0 50%; max-width: 50%; }
+}
+
+.glass-card {
+  /* 50% white so panels are semi-opaque */
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(10px) saturate(120%);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(2,6,23,0.10);
+  border: 1px solid rgba(255,255,255,0.6);
+}
+
+.login-card {
+  padding: 36px;
+}
+
+/* Make the login card slightly more opaque and add a subtle inner highlight/border */
+.login-card.glass-card, .glass-card.login-card {
+  /* bump opacity to ~60% for stronger contrast */
+  background: rgba(255,255,255,0.6);
+  /* subtle inner highlight using inset shadow for focus */
+  box-shadow: 0 10px 30px rgba(2,6,23,0.10), inset 0 1px 0 rgba(255,255,255,0.65);
+  border: 1px solid rgba(255,255,255,0.72);
+}
+
+/* Make cards stretch to equal height in the Row */
+.login-container .ant-row {
+  align-items: stretch;
+}
+.glass-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.login-card, .preview-card {
+  height: 100%;
+  /* ensure cards don't stretch edge-to-edge when centered */
+  max-width: 540px; /* allow larger cards within wider container */
+  width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .login-card, .preview-card { max-width: 720px; }
+}
+
+.carousel-wrap {
+  display: flex;
+  align-items: stretch;
+}
+.carousel-scroll {
+  display:flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding: 12px 6px;
+  scroll-behavior: smooth;
+  align-items: center;
+  /* allow scroll area to grow and push status to bottom */
+  flex: 1 1 auto;
+}
+
+/* Hide horizontal scrollbar visuals while preserving scroll functionality */
+.carousel-scroll::-webkit-scrollbar { display: none; height: 0; }
+.carousel-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+
+.official-card {
+  width: 150px;
+  flex: 0 0 150px;
+  text-align:center;
+  padding: 8px;
+  border-radius: 12px;
+  /* semi-opaque card to match container */
+  background: rgba(255,255,255,0.56);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.preview-card > .ant-typography, .preview-card > .ant-typography + div { flex: 0 0 auto; }
+.preview-card .carousel-wrap { flex: 1 1 auto; display: flex; flex-direction: row; }
+.preview-card .ant-card-body { display:flex; flex-direction:column; height:100%; }
+
+
+.title-blue {
+  color: #1677ff;
+  font-weight: 700;
+}
+
+.signin-btn {
+  width: 100%;
+  background: linear-gradient(90deg,#40a9ff 0%,#9254de 100%);
+  color: white;
+  border: none;
+  height: 44px;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(37,99,235,0.18);
+}
+.signin-btn:hover {
+  filter: brightness(1.03);
+  box-shadow: 0 12px 36px rgba(37,99,235,0.22);
+}
+
+/* Warm-styled guest button: match sizing/weight of signin but with an amber/orange palette */
+.guest-warm-btn {
+  width: 100%; 
+  background: linear-gradient(90deg,#ffb347 0%,#ff7e5f 100%); /* warm amber -> orange */
+  color: white;
+  border: none;
+  height: 44px;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(255,126,95,0.16);
+}
+.guest-warm-btn:hover {
+  filter: brightness(1.03);
+  box-shadow: 0 12px 36px rgba(255,126,95,0.22);
+}
+
+.links-row {
+  display:flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.preview-card {
+  padding: 20px;
+}
+
+/* Make the preview card container invisible but keep its inner content visible */
+.preview-card {
+  /* semi-opaque container for officials preview */
+  background: rgba(255,255,255,0.6);
+  box-shadow: 0 10px 28px rgba(2,6,23,0.08);
+  border: 1px solid rgba(255,255,255,0.68);
+}
+
+.carousel-wrap {
+  position: relative;
+}
+.carousel-scroll {
+  display:flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding: 12px 6px;
+  scroll-behavior: smooth;
+}
+.official-card {
+  width: 220px;
+  flex: 0 0 220px;
+  text-align:center;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.7);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+.official-card:hover {
+  transform: translateY(-8px) scale(1.035);
+  box-shadow: 0 22px 44px rgba(37,99,235,0.12);
+}
+.official-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 14px;
+  box-shadow: 0 10px 28px rgba(2,6,23,0.10);
+}
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: rgba(255,255,255,0.9);
+  border-radius: 50%;
+  box-shadow: 0 6px 14px rgba(2,6,23,0.10);
+}
+.carousel-arrow.left { left: 8px; }
+.carousel-arrow.right { right: 8px; }
+
+@media (max-width: 768px) {
+  .login-container { padding: 0 12px; }
+  /* keep carousel arrows visible and inside preview on small screens */
+  .carousel-arrow { display: flex; width: 36px; height: 36px; align-items: center; justify-content: center; }
+  /* On small screens, stack panes vertically: left, then login */
+  .left-pane { order: 0; width: 100% !important; max-width: 100% !important; }
+  .center-pane { order: 1; width: 100% !important; max-width: 100% !important; }
+  .two-pane-row { min-height: auto; flex-direction: column; }
+}

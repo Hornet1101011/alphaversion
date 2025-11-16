@@ -1,0 +1,8 @@
+/* Custom highlight for active sidebar menu item */
+.ant-menu-item-active-custom {
+  background: #e6f0ff !important;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 8px 0 rgba(64, 201, 255, 0.10);
+  color: #3b3b3b !important;
+  font-weight: 700;
+}

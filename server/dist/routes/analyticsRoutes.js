@@ -1,0 +1,21 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const analyticsController_1 = require("../controllers/analyticsController");
+const router = express_1.default.Router();
+router.get('/', (req, res, next) => (0, analyticsController_1.getMonthlyAnalytics)(req, res, next));
+router.get('/gender', (req, res) => (0, analyticsController_1.getGenderDistribution)(req, res));
+router.get('/field', (req, res) => (0, analyticsController_1.getFieldDistribution)(req, res));
+router.get('/age', (req, res) => (0, analyticsController_1.getAgeBuckets)(req, res));
+router.get('/occupation', (req, res) => (0, analyticsController_1.getOccupationDistribution)(req, res));
+router.get('/nationality', (req, res) => (0, analyticsController_1.getNationalityDistribution)(req, res));
+router.get('/blood-type', (req, res) => (0, analyticsController_1.getBloodTypeDistribution)(req, res));
+router.get('/disability', (req, res) => (0, analyticsController_1.getDisabilityDistribution)(req, res));
+router.get('/children-count', (req, res) => (0, analyticsController_1.getChildrenCountDistribution)(req, res));
+router.get('/business-type', (req, res) => (0, analyticsController_1.getBusinessTypeDistribution)(req, res));
+router.get('/business-size', (req, res) => (0, analyticsController_1.getBusinessSizeDistribution)(req, res));
+router.get('/income-brackets', (req, res) => (0, analyticsController_1.getIncomeBrackets)(req, res));
+exports.default = router;

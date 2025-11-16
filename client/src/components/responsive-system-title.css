@@ -1,0 +1,129 @@
+/* Responsive styles for the system title */
+.responsive-system-title {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+
+@media (max-width: 600px) {
+  .responsive-system-title {
+    font-size: 1.1rem !important;
+    white-space: nowrap !important;
+    word-break: normal !important;
+    text-align: left !important;
+    padding: 0 4px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+  .responsive-system-title > span,
+  .responsive-system-title span {
+    display: inline-block !important;
+    min-width: 100% !important;
+    animation: slide-title 8s linear infinite !important;
+    will-change: transform;
+  }
+}
+
+@keyframes slide-title {
+  0% {
+    transform: translateX(100%);
+  }
+  10% {
+    transform: translateX(0%);
+  }
+  90% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Header responsiveness and icon preserve */
+.app-header {
+  box-sizing: border-box;
+}
+.app-header .responsive-system-title img,
+.app-header img {
+  object-fit: contain;
+}
+.app-header .responsive-system-title .title-logo {
+  /* make the logo scale with the title font-size so it stays aligned */
+  height: 1.4em; /* larger than the title by default */
+  width: auto;
+  vertical-align: middle;
+  margin-right: 0.6rem;
+  display: inline-block;
+  /* subtle lift for better separation from white background */
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.08));
+  transition: filter 160ms ease, transform 160ms ease;
+}
+.app-header .responsive-system-title .title-main {
+  /* Fluid sizing: grows with viewport but clamps to sensible min/max */
+  font-size: clamp(18px, 2.6vw + 10px, 40px);
+  font-weight: 600;
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* Gradient text */
+  background: linear-gradient(90deg, #40c9ff 0%, #e81cff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.app-header .ant-avatar {
+  width: 36px !important;
+  height: 36px !important;
+}
+
+@media (max-width: 900px) {
+  .app-header {
+    padding: 0 12px !important;
+  }
+  .app-header .responsive-system-title .title-main {
+    font-size: clamp(16px, 2.4vw + 8px, 30px) !important;
+  }
+  .app-header .responsive-system-title .title-logo {
+    height: 1.25em;
+  }
+  .app-header .ant-avatar {
+    width: 28px !important;
+    height: 28px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    padding: 0 8px !important;
+  }
+  .app-header .responsive-system-title {
+    gap: 8px !important;
+  }
+  .app-header .responsive-system-title .title-main {
+    font-size: clamp(14px, 3.6vw, 22px) !important;
+  }
+  .app-header .responsive-system-title .title-logo {
+    height: 1.05em;
+  }
+  .app-header .ant-avatar {
+    width: 24px !important;
+    height: 24px !important;
+  }
+}
+
+/* Tweak DateTimeDisplay appearance */
+.app-header .date-time {
+  font-size: 13px;
+  color: #666;
+}
+
+@media (max-width: 480px) {
+  .app-header .date-time { display: none; }
+}

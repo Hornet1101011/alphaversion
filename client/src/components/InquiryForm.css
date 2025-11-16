@@ -1,0 +1,24 @@
+/* ...existing code... */
+.inquiry-gradient-btn {
+  background: linear-gradient(90deg, #40a9ff 0%, #9254de 100%) !important;
+  border: none !important;
+  color: #fff !important;
+  box-shadow: 0 2px 8px 0 rgba(64, 201, 255, 0.15);
+  transition: box-shadow 0.2s, transform 0.2s, background 0.2s;
+}
+.inquiry-gradient-btn:hover, .inquiry-gradient-btn:focus {
+  background: linear-gradient(90deg, #1890ff 0%, #e81cff 100%) !important;
+  box-shadow: 0 6px 24px 0 rgba(146, 84, 222, 0.18);
+  transform: translateY(-2px) scale(1.03);
+}.inquiry-rounded-input {
+  border-radius: 10px !important;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.inquiry-rounded-input:hover, .inquiry-rounded-input:focus, .inquiry-rounded-input.ant-input-focused, .inquiry-rounded-input.ant-select-focused {
+  box-shadow: 0 0 0 2px #bae7ff;
+  border-color: #40a9ff !important;
+}
+.inquiry-large-textarea {
+  min-height: 120px !important;
+  font-size: 16px;
+}
